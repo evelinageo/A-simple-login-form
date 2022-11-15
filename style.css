@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #b9d3b7;
+}
+
+.box {
+    position: relative;
+    width: 350px;
+    height: 400px;
+    /*background: #98c9a3;*/
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 350px;
+    height: 400px;
+    background: linear-gradient(0deg, transparent, #0f7173, #c5edac);
+    animation: animate 7s linear infinite;
+    transform-origin: bottom right;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.form {
+    position: absolute;
+    inset: 5px;
+    border-radius: 6px;
+    /*background: #98c9a3;*/
+    z-index: 10;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #98c9a3, #edeec9);
+}
+
+.form h2 {
+    color: #0f7173;
+    font-weight: 500;
+    text-align: center;
+
+}
+
+.login {
+    position: relative;
+    width: 250px;
+    margin-top: 35px;
+}
+
+.login input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    border: none;
+    color: #0f7173;
+    font-size: 1em;
+
+}
+
+.login span {
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    font-size: 1em;
+    color: #F0EBD8;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+
+.login input:valid~span,
+.login input:focus~span {
+    color: #F0EBD8;
+    transform: translateY(-34px);
+    font-size: 0.90em;
+}
+
+.login i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #edeec9;
+    border-radius: 6px;
+    transition: 0.5s;
+    ;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.links a {
+    margin: 10px 0;
+    font-size: 0.90em;
+    color: white;
+    text-decoration: none;
+}
+
+.links a:hover,
+.links a:nth-child(2) {
+    color: #0f7173;
+}
+
+input[type="submit"] {
+    outline: none;
+    border: none;
+    padding: 11px 25px;
+    width: 100px;
+    margin-top: 10px;
+    border-radius: 6px;
+    background: #85b79d;
+    color: #f9f9f9;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #0f7173;
+}
